@@ -5,7 +5,7 @@ This repo is used for preparing interviews, the leetcode questions are divided a
 ### The file structure is as follows:
 
 - Two pointers
-- - Fast slow pointers
+  - Fast slow pointers
 - Hash
-- - Hash set
-- - Hash table
+  - Hash set
+  - Hash table
