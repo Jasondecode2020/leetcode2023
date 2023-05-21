@@ -142,3 +142,30 @@ class Solution:
             return res
         return dfs(n)
 ```
+
+### bottom up
+
+2140. Solving Questions With Brainpower
+
+```python
+class Solution:
+    def mostPoints(self, questions: List[List[int]]) -> int:
+        dp, n = {}, len(questions)
+        for i in range(n - 1, -1, -1):
+            dp[i] = max(dp.get(i + 1, 0), questions[i][0] + dp.get(i + questions[i][1] + 1, 0))
+        return dp[0]
+```
+
+1312. Minimum Insertion Steps to Make a String Palindrome
+
+```python
+class Solution:
+    def minInsertions(self, s: str) -> int:
+        @lru_cache(None)
+        def dfs(i, j):
+            if i >= j: return 0
+            if s[i] == s[j]:
+                return dfs(i + 1, j - 1)
+            return min(dfs(i + 1, j) + 1, dfs(i, j - 1) + 1)
+        return dfs(0, len(s) - 1)
+```
